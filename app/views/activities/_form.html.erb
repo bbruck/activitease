@@ -1,0 +1,11 @@
+<%= simple_form_for(@activity) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :category, collection: ["Option 1", "Option 2", "Option 3", "Option 4"]%>
+  <%= f.input :subcategory, collection: ["Sub 1", "Sub 2", "Sub 3", "Sub 4"] %>
+  <%= f.input :date_from %>
+  <%= f.input :date_to %>
+  <%= f.input :address %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit "List now!" %>
+<% end %>
