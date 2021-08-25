@@ -9,6 +9,7 @@
 }
 
 .banner .btn {
+  color: white;
   margin-left: 50px;
   margin-top: 15px;
 }
@@ -17,7 +18,7 @@
   color: white;
 }
 
-.banner h1, h2 {
+.banner > h1 {
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
