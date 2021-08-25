@@ -3,7 +3,7 @@ class ActivitiesController < ApplicationController
 
   def index
     @activities = Activity.all
-    @markers = @activities.geocoded.map do |flat|
+    @markers = @activities.geocoded.map do |activity|
       {
         lat: activity.latitude,
         lng: activity.longitude
