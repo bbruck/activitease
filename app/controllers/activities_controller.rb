@@ -25,6 +25,12 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
   end
 
+  def update
+    @activity = Activity.find(params[:id])
+    @activity = @activity.update(activity_params)
+    redirect_to activity_path
+  end
+
   def create
     @activity = Activity.new(activity_params)
     @activity.user = current_user
