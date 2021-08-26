@@ -2,7 +2,12 @@ class ActivitiesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
-    @activities = Activity.all
+    if params['activity']['category'].present?
+      @activities = Activity.where(category: params[:activity][:category])
+
+    else
+      @activities = Activity.all
+    end
     @markers = @activities.geocoded.map do |activity|
       {
         lat: activity.latitude,

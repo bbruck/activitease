@@ -1,4 +1,11 @@
 <div class="container">
+
+  <%= simple_form_for :activity, url: activities_path, method: :get do |f| %>
+    <%= f.input :category, collection: Activity::CATEGORIES, prompt: 'select category', label: false, selected: params['activity']['category'] %>
+    <%= f.input :address, input_html: { value: params['activity']['address'] } %>
+    <%= f.button :submit %>
+  <% end %>
+
   <h1>This is our activities index page</h1>
   <p>It really is...</p>
   <div class="activity-flex">
