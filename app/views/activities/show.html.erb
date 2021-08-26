@@ -1,3 +1,25 @@
 <div class="container">
-<h1>Details for <%= @activity.title %>!</h1>
+  <div class="flex-container">
+    <div class=act-image>
+      <%= cl_image_tag @activity.photo.key, height: 300, width: 400, crop: :fill %>
+    </div>
+
+    <div class="activity-details">
+      <br>
+      <h1><strong><%= @activity.title %></strong></h1>
+      <h5><%= @activity.category %> > <%= @activity.subcategory %></h5>
+      <p><strong>Description: </strong><%= @activity.description %></p>
+      <%= link_to "<b>Join now!<b>".html_safe, new_activity_booking_path(@activity), class: "btn btn-outline-warning btn-lg" %>
+    </div>
+  </div>
+  <div class="edit-buttons">
+    <% if @activity.user == current_user %>
+      <%= link_to "Back to all activities", activities_path, class: "btn btn-outline-warning" %>
+      <%= link_to "Edit activity", edit_activity_path(@activity), class: "btn btn-outline-warning" %>
+      <%= link_to "Delete activity", activity_path(@activity), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-outline-danger" %>
+    <% else %>
+      <%= link_to "Back to all activities", activities_path, class: "btn btn-outline-warning" %>
+    <% end %>
+
+  </div>
 </div>
