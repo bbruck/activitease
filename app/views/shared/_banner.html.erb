@@ -1,14 +1,4 @@
 <div class="banner">
 <h1>Activitease - it never has been easier!</h1>
-
-<div class="bar-container">
-<%= simple_form_for :activity, url: activities_path, method: :get do |f| %>
-  <%= f.input :category, collection: Activity::CATEGORIES, prompt: 'select category', label: false %>
-  <%= f.input :address %>
-  <%= f.button :submit %>
-<% end %>
-</div>
-
 <%= link_to "See all activities", activities_path, class: "btn btn-warning btn-lg" %>
-
 </div>
