@@ -6,5 +6,8 @@ class PagesController < ApplicationController
     @categories = ['adventure', 'animal', 'architecture', 'arts', 'collectibles', 'culture', 'education', 'food', 'games', 'green', 'handicrafts', 'music', 'observation', 'social']
   end
 
+  def dashboard
+  end
+
 
 end
