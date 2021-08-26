@@ -13,9 +13,13 @@
         <li class="nav-item active">
           <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
+        <li>
+          <%= link_to "List your activity", new_activity_path, class: "nav-link" %>
+        </li>
         <li class="nav-item">
           <%= link_to "Find activities", activities_path, class: "nav-link" %>
         </li>
+
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/bbruck", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
