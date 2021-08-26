@@ -21,6 +21,10 @@ class ActivitiesController < ApplicationController
     @activity = Activity.new
   end
 
+  def edit
+    @activity = Activity.find(params[:id])
+  end
+
   def create
     @activity = Activity.new(activity_params)
     @activity.user = current_user
@@ -34,6 +38,8 @@ class ActivitiesController < ApplicationController
   def save
     @activity.save
   end
+
+
 
   private
 
