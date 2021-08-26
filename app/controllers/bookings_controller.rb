@@ -9,12 +9,15 @@ class BookingsController < ApplicationController
   end
 
   def create
+    @activity = Activity.find(params[:activity_id])
     @booking = Booking.new
-    @booking.user_ids = current_user
-    @booking.activity_id = Activity.find(params[:activity_id])
-    @booking.status = "pending"
+    @booking.user_id = current_user.id
+    @booking.activity_id = @activity.id
+    # @booking.status = "new"
     if @booking.save!
-      redirect_to booking_path(@booking)
+      @booking.status = "pending"
+      redirect_to activity_path(@activity)
+      flash[:notice] = "You succesfully sent a join request"
     else
       render :new
     end

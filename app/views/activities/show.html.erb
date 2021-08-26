@@ -9,7 +9,7 @@
       <h1><strong><%= @activity.title %></strong></h1>
       <h5><%= @activity.category %> > <%= @activity.subcategory %></h5>
       <p><strong>Description: </strong><%= @activity.description %></p>
-      <%= link_to "<b>Join now!<b>".html_safe, new_activity_booking_path(@activity), class: "btn btn-outline-warning btn-lg" %>
+      <%= link_to "<b>Join now!<b>".html_safe, activity_bookings_path(@activity), method: :post, class: "btn btn-outline-warning btn-lg" %>
     </div>
   </div>
   <div class="edit-buttons">
