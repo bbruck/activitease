@@ -13,9 +13,8 @@ class BookingsController < ApplicationController
     @booking = Booking.new
     @booking.user_id = current_user.id
     @booking.activity_id = @activity.id
-    # @booking.status = "new"
+    @booking.status = "pending"
     if @booking.save!
-      @booking.status = "pending"
       redirect_to activity_path(@activity)
       flash[:notice] = "You succesfully sent a join request"
     else

@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Your dashboard</h1>
+  <h2>Incoming join requests</h2>
+  <% @activities = Activity.where(user_id: current_user.id) %>
+  <ul>
+  <% @activities.each do |activity| %>
+    <% title = activity.title %>
+    <% id = activity.id %>
+    <% @bookings = Booking.where(activity_id: id) %>
+    <% @bookings.each do |booking| %>
+      <li><% id %>, <% title %>, , <% booking.status %> </li>
+    <% end %>
+  <% end %>
+  </ul>
+
+
+  <h2>Outgoing join requests</h2>
+  <% @bookings = Booking.where(user_id: current_user.id) %>
+  <ul>
+  <% @bookings.each do |booking| %>
+    <% activity = booking.activity_id %>
+    <% status = booking.status %>
+  <% @activities = Activity.where(id: activity) %>
+    <ul>
+    <% @activities.each do |activity| %>
+    <li><%= link_to activity.title, activity_path(activity) %>, <%= status %></li>
+    <% end %>
+    </ul>
+  <% end %>
+</div>
