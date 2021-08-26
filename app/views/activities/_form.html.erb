@@ -5,7 +5,7 @@
   <%= f.input :subcategory, collection: ["Sub 1", "Sub 2", "Sub 3", "Sub 4"] %>
   <%= f.input :date_from %>
   <%= f.input :date_to %>
-  <%= f.input :address %>
+  <%= f.input :address, id:'activity_address' %>
   <%= f.input :photo, as: :file %>
   <%= f.submit "List now!" %>
 <% end %>

@@ -1,9 +1,12 @@
 <div class="container">
   <div class="flex-container">
     <div class=act-image>
+    <% if @activity.photo.attached? %>
       <%= cl_image_tag @activity.photo.key, height: 300, width: 400, crop: :fill %>
+    <% else %>
+      <img class="activity-img" src="https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80">
     </div>
-
+    <% end %>
     <div class="activity-details">
       <br>
       <h1><strong><%= @activity.title %></strong></h1>
