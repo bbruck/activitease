@@ -1,6 +1,5 @@
 .activity-flex {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -43,4 +42,8 @@
 
 .card-activity .card-activity-infos {
   padding: 16px;
+}
+
+.map {
+  position: sticky;
 }
