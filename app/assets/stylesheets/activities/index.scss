@@ -10,6 +10,7 @@
   justify-content: space-around;
   margin-bottom: 25px;
   margin-right: 20px;
+
 }
 
 .card-activity {
@@ -20,6 +21,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 15px;
+  border-radius: 10px;
 }
 
 .card-activity img {
@@ -48,6 +50,6 @@
 }
 
 .map {
-  position: fixed;
+
   height: 100vh;
 }
