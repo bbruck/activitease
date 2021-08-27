@@ -3,26 +3,18 @@
   <h2>Incoming join requests</h2>
   <div class="incoming">
       <ul>
-      <% @activities.each do |activity| %>
-        <% activity.bookings.each do |booking| %>
-            <li><strong>Activity:</strong> <%=link_to activity.title, activity_path(activity) %>, <strong>Request from:</strong> <%= booking.user.email %>, <strong>Status:</strong> <%= booking.status %> || <%= link_to "Accept", dashboard_accept_path(booking) %> / <%= link_to "Decline", dashboard_decline_path(booking) %> </li>
+        <% @incoming_bookings.each do |booking| %>
+            <li><strong>Activity:</strong> <%=link_to booking.activity.title, activity_path(booking.activity) %>, <strong>Request from:</strong> <%= booking.user.email %>, <strong>Status:</strong> <%= booking.status %> || <%= link_to "Accept", dashboard_accept_path(booking), method: :patch %> / <%= link_to "Decline", dashboard_decline_path(booking), method: :patch %> </li>
         <% end %>
-      <% end %>
       </ul>
   </div>
 
 
   <div class="outgoing">
     <h2>Outgoing join requests</h2>
-    <% @bookings = Booking.where(user_id: current_user.id) %>
-    <% @bookings.each do |booking| %>
-      <% activity = booking.activity_id %>
-      <% status = booking.status %>
-    <% @activities = Activity.where(id: activity) %>
+    <% @outgoing_bookings.each do |booking| %>
       <ul>
-        <% @activities.each do |activity| %>
-        <li><strong>Activity: </strong><%= link_to activity.title, activity_path(activity) %>, <strong>Status: </strong><%= status %></li>
-        <% end %>
+        <li><strong>Activity: </strong><%= link_to booking.activity.title, activity_path(booking.activity) %>, <strong>Status: </strong><%= booking.status %></li>
       </ul>
     <% end %>
   </div>
