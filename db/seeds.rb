@@ -131,7 +131,7 @@ activity_11 = Activity.new(
     address: "Grellstraße 11, 10409 Berlin",
     user_id: user1.id)
 activity_11.save!
-activity_11.photo.attach(io: photo_11, filename: 'urban_gardening.jpg', content_type: 'image/png')
+activity_11.photo.attach(io: photo_11, filename: 'gardening.jpg', content_type: 'image/png')
 
 photo_12 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v1630058337/activitease/handpan_wecguy.jpg')
 activity_12 = Activity.new(
@@ -181,7 +181,7 @@ activity_16 = Activity.new(
     address: "Karl-Liebknecht-Str. 9, 10178 Berlin",
     user_id: user4.id)
 activity_16.save!
-activity_16.photo.attach(io: photo_16, filename: 'urban_travel.jpg', content_type: 'image/png')
+activity_16.photo.attach(io: photo_16, filename: 'travel.jpg', content_type: 'image/png')
 
 photo_17 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v1630058335/activitease/sailing_wlkxur.jpg')
 activity_17 = Activity.new(
@@ -191,7 +191,7 @@ activity_17 = Activity.new(
     address: "Fährstraße, 14469 Potsdam",
     user_id: user2.id)
 activity_17.save!
-activity_17.photo.attach(io: photo_17, filename: 'urban_travel.jpg', content_type: 'image/png')
+activity_17.photo.attach(io: photo_17, filename: 'sailing.jpg', content_type: 'image/png')
 
 photo_18 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v1630061503/activitease/Graphik_Biohacking_1978x925_800x800_cqmbke.jpg')
 activity_18 = Activity.new(
