@@ -6,9 +6,13 @@
 # #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 # #   Character.create(name: 'Luke', movie: movies.first)
 require "open-uri"
-p "Destroying database"
-Activity.destroy_all
-User.destroy_all
+
+# p "Destroying database"
+# Activity.destroy_all
+# User.destroy_all
+
+# p "Database destroyed"
+
 p "Creating users"
 user1 = User.new(email: 'b@bruck.com', password: 'XXXXXX')
 user1.save!
