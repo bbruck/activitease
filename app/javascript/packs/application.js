@@ -32,9 +32,10 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 // internal imports
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import { initMapbox } from '../plugins/init_mapbox';
+import { initChatroomCable } from '../channels/chatroom_channel';
 // import { initSelect2 } from '../components/init_select2';
 
-document.addEventListener('turbolinks:load', () => {
+document.addEventListener('turbolinks:load', initChatroomCable, () => {
   // Call your functions here, e.g:
   // initSelect2();
   initMapbox();
