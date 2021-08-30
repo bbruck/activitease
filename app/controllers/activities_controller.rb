@@ -7,7 +7,7 @@ class ActivitiesController < ApplicationController
 
     else
       @activities = Activity.all
-    end 
+    end
     @markers = @activities.geocoded.map do |activity|
       {
         lat: activity.latitude,

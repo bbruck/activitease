@@ -16,6 +16,7 @@
 }
 
 .activity-details {
+  font-family: 'Josefin Sans', sans-serif;
   position: relative;
   text-align: right;
   overflow: hidden;
@@ -26,8 +27,7 @@
 }
 
 .card-container .activity-details h1 {
-  font-family: 'Old Standard TT', serif;
-//  family: Helvetica, sans-serif; font-
+  font-family: 'Josefin Sans', sans-serif;
   display: inline-block;
   position: relative;
   font-size: 34px;
@@ -42,7 +42,7 @@
   right: 0%;
   top: 0%;
   transform: translate(25px, -15px);
-  font-family: 'Farsan';
+  font-family: 'Josefin Sans', sans-serif;
   display: inline-block;
   // background: #FFA69E;
   border-radius: 15px;
@@ -83,13 +83,13 @@
   // background: rgba(60, 65, 65, 0.9);
   background: #FF947A;
   opacity: 0.9;
-  font-family: 'Farsan';
+  font-family: 'Josefin Sans', sans-serif;
   transition: all 0.3s ease-out;
   transform: translateX(-100%);
   position: absolute;
   line-height: 1;
   text-align: left;
-  font-size: 120%;
+  font-size: 80%;
   color: #FFF;
   height: 100%;
   width: 100%;
@@ -99,9 +99,9 @@
 
 .info h3 {
   text-align: center;
-  font-family: 'Old Standard TT', serif;
+  font-family: 'Josefin Sans', sans-serif;
   padding-top: 20px;
-  font-size: 40px;
+  font-size: 32px;
 }
 .activity-image:hover .info{transform: translateX(0);}
 
@@ -123,7 +123,7 @@
 }
 
 .card-container .activity-details > p {
-  font-family: 'Farsan';
+  font-family: 'Josefin Sans', sans-serif;
   text-align: center;
   font-size: 15px;
   color: #7d7d7d;
