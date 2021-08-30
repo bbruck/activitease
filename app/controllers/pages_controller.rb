@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @activity = Activity.new
-    @categories = ['adventure', 'animal', 'architecture', 'arts', 'collectibles', 'culture', 'education', 'food', 'games', 'green', 'handicrafts', 'music', 'observation', 'social']
+    @categories = ['Adventure', 'Animal', 'Architecture', 'Arts', 'Collectibles', 'Culture', 'Education', 'Food', 'Games', 'Green', 'Handicrafts', 'Music', 'Observation', 'Social']
   end
 
   def dashboard

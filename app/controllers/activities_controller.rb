@@ -2,19 +2,18 @@ class ActivitiesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
-    if params['activity']['category'].present?
+    if params[:category].present?
       @activities = Activity.where(category: params[:activity][:category])
 
     else
       @activities = Activity.all
-    end
+    end 
     @markers = @activities.geocoded.map do |activity|
       {
         lat: activity.latitude,
         lng: activity.longitude,
         info_window: render_to_string(partial: "info_window", locals: { activity: activity })
       }
-
     end
   end
 
@@ -61,5 +60,4 @@ class ActivitiesController < ApplicationController
   def activity_params
     params.require(:activity).permit(:title, :description, :category, :subcategory, :date_from, :date_to, :adress, :photo)
   end
-
 end
