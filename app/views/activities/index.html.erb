@@ -1,5 +1,21 @@
 <div class="container">
-  <h1>Activities in your area</h1>
+
+  <%= simple_form_for :activity, url: activities_path, method: :get do |f| %>
+    <% if params[:activity].present?%>
+      <%= f.input :category, collection: Activity::CATEGORIES, prompt: 'select category', label: false, selected: params[:activity][:category] %>
+    <%else %>
+      <%= f.input :category, collection: Activity::CATEGORIES, prompt: 'select category', label: false %>
+    <%end%>
+    <% if params[:cateogory].present?%>
+      <%= f.input :address, input_html: { value: params[:category][:address] } %>
+    <%else %>
+     <%= f.input :address %>
+    <%end%>
+    <%= f.button :submit %>
+  <% end %>
+
+  <h1>This is our activities index page</h1>
+  <p>It really is...</p>
   <div class="activity-flex">
     <div class="activity_cards">
       <% @activities.each do |activity| %>
