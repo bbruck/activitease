@@ -3,8 +3,8 @@
   <%= f.input :description %>
   <%= f.input :category, collection: ["Adventure", "Animal", "Architecture", "Arts", "Collectibles", "Culture", "Education", "Food", "Games", "Green", "Handicrafts", "Music", "Observation", "Social", "Spiritual", "Travel", "Sports", "Well-being"]%>
   <%= f.input :subcategory, collection: ["Sub 1", "Sub 2", "Sub 3", "Sub 4"] %>
-  <%= f.input :date_from %>
-  <%= f.input :date_to %>
+  <%= f.input :date_from, as: :string, input_html: { class: "datepicker" } %>
+  <%= f.input :date_to, as: :string, input_html: { class: "datepicker" } %>
   <%= f.input :address, id:'activity_address' %>
   <%= f.input :photo, as: :file %>
   <%= f.submit "List now!" %>

@@ -32,6 +32,10 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
 // internal imports
 import { initMapbox } from '../plugins/init_mapbox';
+import { initFlatpickr } from '../plugins/flatpickr';
+// import 'flatpickr/dist/flatpickr.min.css';
+// import 'flatpickr/dist/themes/airbnb.css';
+import 'flatpickr/dist/themes/material_orange.css';
 import { initChatroomCable } from '../channels/chatroom_channel';
 // import { initSelect2 } from '../components/init_select2';
 
@@ -41,4 +45,5 @@ document.addEventListener('turbolinks:load', () => {
   initChatroomCable();
   initMapbox();
   initAutocomplete();
+  initFlatpickr();
 });
