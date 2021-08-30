@@ -32,7 +32,18 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 // internal imports
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import { initMapbox } from '../plugins/init_mapbox';
+import flatpickr from 'flatpickr';
+import 'flatpickr/dist/flatpickr.min.css'
+import 'flatpickr/dist/themes/airbnb.css';
+import rangePlugin from 'flatpickr/dist/plugins/rangePlugin'
+
+flatpickr(".datepicker", {
+  altInput: true,
+  "plugins": [new rangePlugin({input:"#range_end"})]
+});
 // import { initSelect2 } from '../components/init_select2';
+
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
