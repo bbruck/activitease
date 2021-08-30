@@ -34,7 +34,6 @@ import { initFlatpickr } from '../plugins/flatpickr';
 // import 'flatpickr/dist/flatpickr.min.css';
 // import 'flatpickr/dist/themes/airbnb.css';
 import 'flatpickr/dist/themes/material_orange.css';
-
 import { initChatroomCable } from '../channels/chatroom_channel';
 // import { initSelect2 } from '../components/init_select2';
 
