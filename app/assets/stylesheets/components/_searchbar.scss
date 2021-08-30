@@ -1,0 +1,42 @@
+.btn-go {
+  box-sizing: border-box;
+  background: coral;
+  margin-left: 1rem;
+  padding: 0 10px;
+  border-radius: 8px;
+}
+
+.btn-font {
+  color: white !important;
+  font-weight: bolder !important;
+}
+
+.search {
+  width: 600px;
+  padding-top: 10px;
+}
+
+.search-bar{
+    background: linear-gradient(rgba(250,250,250,0.1), rgba(0,0,0,0.5));
+    padding-right: 10px;
+    border-radius: 8px;
+    padding-top: 10px;
+
+
+    form {
+      display: flex;
+    }
+}
+
+.form-group {
+  margin-bottom: 0;
+}
+
+.search-bar p {
+  margin: 0;
+  font-weight: bold;
+  text-align: left;
+  padding-left: 10px;
+  padding-right:5px;
+
+  }
