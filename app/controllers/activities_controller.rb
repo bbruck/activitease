@@ -2,9 +2,14 @@ class ActivitiesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
-    if params[:category].present?
-      @activities = Activity.where(category: params[:activity][:category])
-
+    # raise
+    if params[:activity].present?
+      if params[:activity][:address].empty?
+        @activities = Activity.where(category: params[:activity][:category])
+      else
+        @activities = Activity.where(category: params[:activity][:category])
+        @activities = @activities.near(params[:activity][:address],20)
+      end
     else
       @activities = Activity.all
     end
