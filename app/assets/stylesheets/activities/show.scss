@@ -1,8 +1,20 @@
 .flex-container {
   box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  width: 80vw;
+  padding-bottom: 10px;
+}
+
+.upper-card {
   display: flex;
   flex-wrap: wrap;
   justify-content:space-evenly;
+}
+
+.activity-text {
+  margin: 15px 15px 30px 15px;
+  width: 100%;
+  font-weight: normal;
 }
 
 .edit-buttons {
@@ -13,6 +25,15 @@
 }
 
 .act-image {
-  width: 400px;
-  height: 300px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.activity-details {
+  text-align: start;
+  position: top;
+}
+
+.cat-box > span {
+  background-color: #FF947A;
 }

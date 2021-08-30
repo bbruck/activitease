@@ -23,6 +23,8 @@ gem 'redis', '~> 4.0'
 # gem 'bcrypt', '~> 3.1.7'
 # Use geocoder for geocoding
 gem 'geocoder'
+# Use datepicker for datepicking
+gem 'bootstrap-datepicker-rails'
 
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.16.0'

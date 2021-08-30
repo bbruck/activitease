@@ -12,7 +12,6 @@
 @import "font-awesome";
 @import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder';
 
-
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
@@ -22,4 +21,8 @@
 @import "activities/show";
 
 // Dashboard CSS
-@import "pages/dashboard"
+@import "pages/dashboard";
+
+
+// Chatbox CSS
+@import "pages/chatbox";
