@@ -1,20 +1,30 @@
 <div class="container">
   <div class="flex-container">
-    <div class=act-image>
-    <% if @activity.photo.attached? %>
-      <%= cl_image_tag @activity.photo.key, height: 300, width: 400, crop: :fill %>
-    <% else %>
-      <img class="activity-img" src="https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80">
-    <% end %>
+    <div class="upper-card">
+      <div class=act-image>
+        <% if @activity.photo.attached? %>
+          <%= cl_image_tag @activity.photo.key, height: 300, width: 400, crop: :fill %>
+        <% else %>
+          <img class="activity-img" src="https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc">
+        <% end %>
+      </div>
+      <div class="activity-details">
+        <h5 class="cat-box"><span><%= @activity.category %></span></h5>
+        <h1 style="text-align=justify"><strong><%= @activity.title %></strong></h1>
+        <p><strong>From:</strong> <%= @activity.date_from %> <strong>To:</strong> <%= @activity.date_to %></p>
+        <p><strong>Location:</strong> <%= @activity.address %></p>
+        <%= link_to "<b>Join now!<b>".html_safe, activity_bookings_path(@activity), method: :post, class: "btn btn-outline-warning btn-lg" %>
+      </div>
     </div>
-    <div class="activity-details">
-      <br>
-      <h1><strong><%= @activity.title %></strong></h1>
-      <h5><%= @activity.category %> > <%= @activity.subcategory %></h5>
-      <p><strong>Description: </strong><%= @activity.description %></p>
-      <%= link_to "<b>Join now!<b>".html_safe, activity_bookings_path(@activity), method: :post, class: "btn btn-outline-warning btn-lg" %>
+    <div class="activity-text">
+      <p><strong>Description: </strong></p>
+      <p><%= @activity.description %></p>
     </div>
   </div>
+
+
+
+
   <div class="edit-buttons">
     <% if @activity.user == current_user %>
       <%= link_to "Back to all activities", activities_path, class: "btn btn-outline-warning" %>
