@@ -4,7 +4,7 @@
   <div class="incoming">
       <ul>
         <% @incoming_bookings.each do |booking| %>
-            <li><strong>Activity:</strong> <%=link_to booking.activity.title, activity_path(booking.activity) %>, <strong>Request from:</strong> <%= booking.user.email %>, <strong>Status:</strong> <%= booking.status %> || <%= link_to "Accept", dashboard_accept_path(booking), method: :patch %> / <%= link_to "Decline", dashboard_decline_path(booking), method: :patch %> </li>
+            <li><strong>Activity:</strong> <%=link_to booking.activity.title, activity_path(booking.activity) %>, <strong>Request from:</strong> <%= booking.user.email %>, <strong>Status:</strong> <%= booking.status %> || <%= link_to "Accept", accept_path(booking), method: :patch %> / <%= link_to "Decline", decline_path(booking), method: :patch %> </li>
         <% end %>
       </ul>
   </div>
