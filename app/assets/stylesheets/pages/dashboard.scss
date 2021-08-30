@@ -5,15 +5,17 @@
 
 .outgoing {
   min-height: 100px;
+  margin-bottom: 25px;
 }
 
 .card-product {
   overflow: hidden;
   height: 120px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  margin-bottom: 15px;
 }
 
 .card-product img {
@@ -22,8 +24,10 @@
   object-fit: cover;
 }
 
-.card-product h2 {
-  font-size: 16px;
+.card-product h2, a {
+  color: black;
+  opacity: .9;
+  font-size: 18px;
   font-weight: bold;
   margin: 0;
 }
@@ -38,4 +42,8 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+.requestbtn {
+  margin-top: 10px;
 }

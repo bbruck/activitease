@@ -8,7 +8,8 @@
             <div class="card-product-infos">
               <h2><%=link_to booking.activity.title, activity_path(booking.activity) %></h2>
               <p><strong>Request from:</strong> <%= booking.user.email %></p>
-              <p><strong>Status:</strong> <%= booking.status %> || <%= link_to "Accept", accept_path(booking), method: :patch %> / <%= link_to "Decline", decline_path(booking), method: :patch %></p>
+              <%= link_to "Accept", accept_path(booking), method: :patch, class: "btn btn-success requestbtn" %>
+              <%= link_to "Decline", decline_path(booking), method: :patch, class: "btn btn-danger requestbtn" %>
             </div>
           </div>
         <% end %>
@@ -18,9 +19,13 @@
   <div class="outgoing">
     <h2>Outgoing join requests</h2>
     <% @outgoing_bookings.each do |booking| %>
-      <ul>
-        <li><strong>Activity: </strong><%= link_to booking.activity.title, activity_path(booking.activity) %>, <strong>Status: </strong><%= booking.status %></li>
-      </ul>
-    <% end %>
+      <div class="card-product">
+        <%= cl_image_tag booking.activity.photo.key, height: 300, width: 400, crop: :fill, class: "activity-img" %>
+        <div class="card-product-infos">
+          <h2><%=link_to booking.activity.title, activity_path(booking.activity) %></h2>
+          <p><strong>Status: </strong><%= booking.status %></p>
+        </div>
+      </div>
+      <% end %>
   </div>
 </div>

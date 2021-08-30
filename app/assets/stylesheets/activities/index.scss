@@ -10,7 +10,7 @@
   justify-content: space-around;
   margin-bottom: 25px;
   margin-right: 20px;
-
+  text-decoration: none;
 }
 
 .card-activity {
@@ -22,6 +22,7 @@
   align-items: center;
   margin-bottom: 15px;
   border-radius: 10px;
+  text-decoration: none;
 }
 
 .card-activity img {
@@ -38,7 +39,13 @@
 }
 
 .card-activity a {
-  color:#7F7C82;
+  color:#69676b;
+  text-decoration: none;
+}
+
+.card-activity a:hover {
+  color:#FF947A;
+  text-decoration: none;
 }
 
 .card-activity p {
