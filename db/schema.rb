@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_30_091218) do
+ActiveRecord::Schema.define(version: 2021_08_31_104146) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,8 +42,8 @@ ActiveRecord::Schema.define(version: 2021_08_30_091218) do
     t.string "category"
     t.string "subcategory"
     t.string "address"
-    t.date "date_from"
-    t.date "date_to"
+    t.datetime "date_from", precision: 5
+    t.datetime "date_to", precision: 5
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -66,6 +66,8 @@ ActiveRecord::Schema.define(version: 2021_08_30_091218) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "booking_id", null: false
+    t.index ["booking_id"], name: "index_chatrooms_on_booking_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -105,6 +107,7 @@ ActiveRecord::Schema.define(version: 2021_08_30_091218) do
   add_foreign_key "activities", "users"
   add_foreign_key "bookings", "activities"
   add_foreign_key "bookings", "users"
+  add_foreign_key "chatrooms", "bookings"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "reviews", "activities"

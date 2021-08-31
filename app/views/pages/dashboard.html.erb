@@ -1,27 +1,23 @@
 <div class="container">
   <h1>Your dashboard</h1>
-  <h2>Incoming join requests</h2>
+  <h2 style="text-align: center; margin-bottom: 25px;">Incoming join requests</h2>
   <div class="incoming">
         <% @incoming_bookings.each do |booking| %>
           <div class="card-product">
-            <% if activity.photo.attached? %>
-              <%= cl_image_tag booking.activity.photo.key, height: 300, width: 400, crop: :fill, class: "activity-img" %>
-            <% else %>
-              <%= image_tag "https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80", class: "activity-img" %>
-            <% end %>
+            <%= cl_image_tag booking.activity.photo.key, height: 300, width: 400, crop: :fill, class: "activity-img" %>
             <div class="card-product-infos">
               <h2><%=link_to booking.activity.title, activity_path(booking.activity) %></h2>
               <p><strong>Request from:</strong> <%= booking.user.email %></p>
-              <%= link_to "Accept", accept_path(booking), method: :patch, class: "btn btn-success requestbtn" %>
-              <%= link_to "Decline", decline_path(booking), method: :patch, class: "btn btn-danger requestbtn" %>
+                <%= link_to "Accept", accept_path(booking), method: :patch, class: "btn btn-success requestbtn" %>
+                <%= link_to "Decline", decline_path(booking), method: :patch, class: "btn btn-danger requestbtn" %>
+                <%= link_to "Get in touch", chatroom_path(booking.chatroom), class: "incomingchat-link btn btn-outline-warning" %>
             </div>
           </div>
         <% end %>
   </div>
 
-
+  <h2 style="text-align: center; margin-bottom: 25px;">Outgoing join requests</h2>
   <div class="outgoing">
-    <h2>Outgoing join requests</h2>
     <% @outgoing_bookings.each do |booking| %>
       <div class="card-product">
         <%= cl_image_tag booking.activity.photo.key, height: 300, width: 400, crop: :fill, class: "activity-img" %>
@@ -29,7 +25,14 @@
           <h2><%=link_to booking.activity.title, activity_path(booking.activity) %></h2>
           <p><strong>Status: </strong><%= booking.status %></p>
         </div>
+        <div class= "chat-link">
+        <% if booking.status == "accepted" %>
+          <%= link_to "Get in touch", chatroom_path(booking.chatroom), class: "btn btn-outline-warning"%>
+        <% end %>
+        </div>
       </div>
       <% end %>
   </div>
+
+
 </div>

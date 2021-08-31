@@ -6,12 +6,12 @@ Rails.application.routes.draw do
   patch 'bookings/:id/decline', to: 'bookings#decline', as: :decline
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :reviews
 
   resources :activities do
     resources :bookings
   end
 
-  resources :reviews
 
   resources :chatrooms, only: :show do
     resources :messages, only: :create
