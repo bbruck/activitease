@@ -36,6 +36,7 @@
           <div class="card-activity-infos">
             <p><strong><%= activity.category %></strong></p>
             <h3><%= link_to activity.title, activity_path(activity) %></h3>
+            <p><strong>From: </strong><%= activity.date_from %> <strong>To: </strong><%= activity.date_to %></p>
           </div>
         </div>
       <% end %>
