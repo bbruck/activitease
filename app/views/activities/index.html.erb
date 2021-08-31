@@ -1,35 +1,24 @@
 <div class="container">
-<h2>This is our activities index page</h2>
+  <h2>This is our activities index page</h2>
 
-  <div class="search d-flex align-items-center justify-content-center">
+  <%# <div class="search d-flex align-items-center justify-content-center"> %>
     <div class="entire-sbar">
-      <div class="search-bar d-flex">
+      <div class="search-bar">
         <%= simple_form_for :activity, url: activities_path, method: :get, html: { class: 'form-inline' } do |f| %>
-          <% if params[:activity].present?%>
-            <%= f.input :category, collection: Activity::CATEGORIES, prompt: 'select category', selected: params[:activity][:category], label: "I'm looking for", required: false %>
-          <%else %>
-            <%= f.input :category, collection: Activity::CATEGORIES, prompt: 'select category', label: "I'm looking for", required: false %>
-          <%end%>
-          <% if params[:cateogory].present?%>
-            <%= f.input :address, input_html: { value: params[:category][:address] }, label: "in", required: false %>
-          <%else %>
-            <%= f.input :address, label: "in", required: false, placeholder: 'Berlin' %>
-          <%end%>
-      </div>
-          <div class="form-group btn-go">
-            <%= f.button :submit, 'Go!', class: 'btn-font' %>
-          </div>
+          <%= f.input :category, collection: Activity::CATEGORIES, prompt: 'Category', label: "I'm looking for", required: false %>
+          <%= f.input :address, label: "in", required: false, placeholder: 'Location' %>
+          <%= f.button :submit, 'Go!', class: 'form-group btn-go btn-font' %>
         <% end %>
       </div>
-  </div>
+    </div>
+  <%# </div> %>
 
-  <%# <h3>This is our activities index page</h3> %>
   <div class="activity-flex">
     <div class="activity_cards">
       <% @activities.each do |activity| %>
         <div class="card-activity">
           <% if activity.photo.attached? %>
-            <%= cl_image_tag activity.photo.key, height: 300, width: 400, crop: :fill, class: "activity-img" %>
+            <%= cl_image_tag activity.photo.key, height: 400, width: 400, crop: :fill, class: "activity-img" %>
           <% else %>
             <%= image_tag "https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80", class: "activity-img" %>
           <% end %>
