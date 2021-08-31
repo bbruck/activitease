@@ -30,8 +30,8 @@ activity_1 = Activity.new(
     category: "Handicrafts",
     subcategory: "Clothing",
     address: "Alt-Stralau 70, 10245 Berlin",
-    date_from: "2021/09/06 19:00",
-    date_to: "2021/09/06 21:00",
+    date_from: "06/09/2021 19:00",
+    date_to: "06/09/2021 21:00",
     description: "Weekly on Monday 7-9pm, this sewing activity is for you to repair and reuse to create your own sustainable wardrobe. You learn to sew from scratch, new, timeless pieces and understand the clothes making process (fabric cutting, simple pattern work, fitting, the most common sewing techniques), so that you can refresh your style without always buying new clothes. Depending on your sewing experience and desires, focus is on Introduction to Fabrics & the Sewing Machine, Repairs & Alterations, Skirt or Shorts, Modern Kimono, Stretch Dress or T-Shirt, Zipper Trousers, Open Upcycling Project, Button Shirt or Shirt-Dress. Everyone is welcome.",
     user_id: user1.id)
 activity_1.save!
