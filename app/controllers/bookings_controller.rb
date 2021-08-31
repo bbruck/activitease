@@ -14,7 +14,9 @@ class BookingsController < ApplicationController
     @booking.user_id = current_user.id
     @booking.activity_id = @activity.id
     @booking.status = "pending"
+
     if @booking.save!
+      chatroom = Chatroom.create(booking:@booking)
       redirect_to activity_path(@activity)
       flash[:notice] = "You succesfully sent a join request"
     else
