@@ -1,0 +1,68 @@
+.entire-sbar {
+  display: flex;
+  flex-wrap: wrap;
+  height: 5em;
+}
+
+
+
+.btn-go {
+  box-sizing: border-box;
+  background: coral;
+  margin-left: 1rem;
+  padding: 13px 20px 0px 20px;
+  padding-bottom: -1px;
+  border-radius: 8px;
+
+}
+
+.btn-font {
+  color: white !important;
+  font-weight: bolder !important;
+
+}
+
+.search {
+  width: 100%;
+  padding-top: 10px;
+}
+
+.search-bar{
+    background: rgba(0,0,0,0.2);
+    padding-right: 10px;
+    border-radius: 8px;
+    padding-top: 10px;
+    margin-bottom: 20px;
+    margin-bottom: 16px;
+
+
+    form {
+      display: flex;
+      padding: 5px 20px 10px 20px;
+    }
+}
+.form-control.select, .form-control.string {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid black;
+}
+.form-group {
+  // margin-bottom: 0;
+}
+
+.search-bar p {
+  margin: 0;
+  font-weight: bolder !important;
+  text-align: left;
+  padding-left: 10px;
+  padding-right: 5px;
+
+}
+
+.optional.activity_category > label {
+  font-weight: bolder;
+}
+
+.optional.activity_address > label {
+  font-weight: bolder;
+}

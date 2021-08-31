@@ -1,20 +1,29 @@
 <div class="container">
+<h2>This is our activities index page</h2>
 
-  <%= simple_form_for :activity, url: activities_path, method: :get do |f| %>
-    <% if params[:activity].present?%>
-      <%= f.input :category, collection: Activity::CATEGORIES, prompt: 'select category', label: false, selected: params[:activity][:category] %>
-    <%else %>
-      <%= f.input :category, collection: Activity::CATEGORIES, prompt: 'select category', label: false %>
-    <%end%>
-    <% if params[:cateogory].present?%>
-      <%= f.input :address, input_html: { value: params[:category][:address] } %>
-    <%else %>
-     <%= f.input :address %>
-    <%end%>
-    <%= f.button :submit %>
-  <% end %>
+  <div class="search d-flex align-items-center justify-content-center">
+    <div class="entire-sbar">
+      <div class="search-bar d-flex">
+        <%= simple_form_for :activity, url: activities_path, method: :get, html: { class: 'form-inline' } do |f| %>
+          <% if params[:activity].present?%>
+            <%= f.input :category, collection: Activity::CATEGORIES, prompt: 'select category', selected: params[:activity][:category], label: "I'm looking for", required: false %>
+          <%else %>
+            <%= f.input :category, collection: Activity::CATEGORIES, prompt: 'select category', label: "I'm looking for", required: false %>
+          <%end%>
+          <% if params[:cateogory].present?%>
+            <%= f.input :address, input_html: { value: params[:category][:address] }, label: "in", required: false %>
+          <%else %>
+            <%= f.input :address, label: "in", required: false, placeholder: 'Berlin' %>
+          <%end%>
+      </div>
+          <div class="form-group btn-go">
+            <%= f.button :submit, 'Go!', class: 'btn-font' %>
+          </div>
+        <% end %>
+      </div>
+  </div>
 
-  <h1>This is our activities index page</h1>
+  <%# <h3>This is our activities index page</h3> %>
   <div class="activity-flex">
     <div class="activity_cards">
       <% @activities.each do |activity| %>
