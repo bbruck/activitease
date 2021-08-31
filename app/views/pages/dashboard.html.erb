@@ -4,7 +4,7 @@
   <div class="incoming">
         <% @incoming_bookings.each do |booking| %>
           <div class="card-product">
-            <% if activity.photo.attached? %>
+            <% if booking.activity.photo.attached? %>
               <%= cl_image_tag booking.activity.photo.key, height: 300, width: 400, crop: :fill, class: "activity-img" %>
             <% else %>
               <%= image_tag "https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80", style: 'height:300px; width:auto;' %>
