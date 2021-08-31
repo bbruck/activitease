@@ -1,9 +1,13 @@
 .incoming {
+  margin: 0 auto;
+  width: 50vw;
   min-height: 100px;
   margin-bottom: 25px;
 }
 
 .outgoing {
+  margin: 0 auto;
+  width: 50vw;
   min-height: 100px;
   margin-bottom: 25px;
 }
@@ -45,5 +49,14 @@
 }
 
 .requestbtn {
+  margin-top: 10px;
+}
+
+.chat-link {
+  margin-top: 0 auto;
+  margin-left: 150px;
+}
+
+.incomingchat-link {
   margin-top: 10px;
 }
