@@ -10,6 +10,7 @@
               <p><strong>Request from:</strong> <%= booking.user.email %></p>
               <%= link_to "Accept", accept_path(booking), method: :patch, class: "btn btn-success requestbtn" %>
               <%= link_to "Decline", decline_path(booking), method: :patch, class: "btn btn-danger requestbtn" %>
+              <%= link_to "Get in touch", chatroom_path(booking.chatroom) %>
             </div>
           </div>
         <% end %>
@@ -24,6 +25,9 @@
         <div class="card-product-infos">
           <h2><%=link_to booking.activity.title, activity_path(booking.activity) %></h2>
           <p><strong>Status: </strong><%= booking.status %></p>
+        </div>
+        <div class= "chat-link">
+        <%= link_to "Get in touch", chatroom_path(booking.chatroom) %>
         </div>
       </div>
       <% end %>
