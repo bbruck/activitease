@@ -1,19 +1,26 @@
 .entire-sbar {
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
-  height: 5em;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 20px;
 }
 
-
-
-.btn-go {
-  box-sizing: border-box;
-  background: coral;
-  margin-left: 1rem;
-  padding: 13px 20px 0px 20px;
-  padding-bottom: -1px;
+.search-bar{
+  background: rgba(0,0,0,0.1);
   border-radius: 8px;
 
+  form {
+    padding: 5px 20px 10px 20px;
+  }
+}
+
+.btn-go {
+  height: 100%;
+  background: coral;
+  margin-left: 1rem;
+  border-radius: 8px;
 }
 
 .btn-font {
@@ -22,41 +29,10 @@
 
 }
 
-.search {
-  width: 100%;
-  padding-top: 10px;
-}
-
-.search-bar{
-    background: rgba(0,0,0,0.2);
-    padding-right: 10px;
-    border-radius: 8px;
-    padding-top: 10px;
-    margin-bottom: 20px;
-    margin-bottom: 16px;
-
-
-    form {
-      display: flex;
-      padding: 5px 20px 10px 20px;
-    }
-}
 .form-control.select, .form-control.string {
   background: transparent;
   border: none;
   border-bottom: 2px solid black;
-}
-.form-group {
-  // margin-bottom: 0;
-}
-
-.search-bar p {
-  margin: 0;
-  font-weight: bolder !important;
-  text-align: left;
-  padding-left: 10px;
-  padding-right: 5px;
-
 }
 
 .optional.activity_category > label {
