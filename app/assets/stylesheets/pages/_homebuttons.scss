@@ -1,0 +1,39 @@
+.card-home-container {
+  display: flex;
+  flex-wrap: wrap;
+  // width: 90%;
+  margin: 0 auto;
+  justify-content: space-around;
+  a:hover {
+    color: black;
+  }
+}
+.info-card-home  {
+  font-family: 'Josefin Sans', sans-serif;
+  display: inline-block;
+  // text-align: right;
+  line-height: 1;
+}
+.info-card-home h3 {
+  font-size: large;
+  margin-left: 0px;
+  margin-right: auto  ;
+}
+.info-card-home p {
+  color: #222222;
+}
+
+
+
+ .category-image {
+  display: inline-block;
+  position: relative;
+  background-size: cover;
+  // float: right;
+  display: inline-block;
+  border-radius: 8px;
+  background:  rgba(255, 255, 255, 0.90);
+  box-shadow: 0 15px 30px 1px rgba(128, 128, 128, 0.31);
+  overflow: hidden;
+
+}
