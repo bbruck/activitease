@@ -11,9 +11,13 @@
       <div class="activity-details">
         <h5 class="cat-box"><span><%= @activity.category %></span></h5>
         <h1 style="text-align=justify"><strong><%= @activity.title %></strong></h1>
-        <p><strong>From:</strong> <%= @activity.date_from %> <strong>To:</strong> <%= @activity.date_to %></p>
+        <p><strong>From: </strong><%= @activity.date_from.strftime("%b %e, %l:%M %p") %> <strong>To: </strong><%= @activity.date_to.strftime("%b %e, %l:%M %p") %></p>
         <p><strong>Location:</strong> <%= @activity.address %></p>
+        <% if @activity.user != current_user %>
         <%= link_to "<b>Join now!<b>".html_safe, activity_bookings_path(@activity), method: :post, class: "btn btn-outline-warning btn-lg" %>
+        <% else %>
+        <span class="badge badge-success">This is your activity</span>
+        <% end %>
       </div>
     </div>
     <div class="activity-text">
