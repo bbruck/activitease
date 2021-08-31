@@ -14,13 +14,13 @@ require "open-uri"
 # p "Database destroyed"
 
 p "Creating users"
-user1 = User.new(email: 'b@bruck.com', password: 'XXXXXX')
+user1 = User.new(email: 'b@bruck.com', nickname: "Bernie", password: 'XXXXXX')
 user1.save!
-user2 = User.create!(email: 'm@rosenfeld.com', password: 'XXXXXX')
+user2 = User.create!(email: 'm@rosenfeld.com', nickname: "NetterHorst", password: 'XXXXXX')
 user2.save!
-user3 = User.create!(email: 'n@mail.com', password: 'XXXXXX')
+user3 = User.create!(email: 'n@mail.com', nickname: "BoeserHorst", password: 'XXXXXX')
 user3.save!
-user4 = User.create!(email: 's@as.sy', password: 'XXXXXX')
+user4 = User.create!(email: 's@as.sy', nickname: "FetterHorst", password: 'XXXXXX')
 user4.save!
 p "Creating activities"
 
