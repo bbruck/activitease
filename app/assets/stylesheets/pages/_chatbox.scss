@@ -17,14 +17,18 @@ line-height: 2rem;
 }
 
 #messages {
-text-align: center;
+margin: auto;
 border-radius: 5px;
+border: aqua;
+border-style: double;
+border-color: #F8E2CF;
+background-color: white;
 
 }
 
 #chat-input {
   width: 60%;
-  margin: auto;}
+  margin: 20px auto;}
 
 h1 {
   padding: 10px;
@@ -34,7 +38,7 @@ h1 {
   display: flex;
   justify-content: space-between;
 }
-.time {
-
-
+.content {
+margin: auto;
+padding: 10px 10px ;
 }

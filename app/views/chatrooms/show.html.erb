@@ -15,7 +15,7 @@
   </div>
       <div id= "chat-input">
         <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-          <%= f.input :content, label: false, placeholder: "Start typing#{@chatroom.name}" %>
+          <%= f.input :content, label: false, placeholder: "type here#{@chatroom.name}" %>
           <%= f.submit "Send", class: "btn btn-warning btn-md" %>
       </div>
   <% end %>
