@@ -8,9 +8,9 @@
 require "open-uri"
 
 # p "Destroying database"
-Activity.destroy_all
-User.destroy_all
-Booking.destroy_all
+# Activity.destroy_all
+# User.destroy_all
+# Booking.destroy_all
 
 # p "Database destroyed"
 
