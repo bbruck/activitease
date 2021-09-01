@@ -26,7 +26,7 @@ p "Creating activities"
 
 photo_1 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v1630058338/activitease/sewing_n7ftad.jpg')
 activity_1 = Activity.new(
-    title: "Sustainable Sewing with Pete",
+    title: "Sustainable Sewing with Bernie",
     category: "Handicrafts",
     address: "Alt-Stralau 70, 10245 Berlin",
     date_from: "06/09/2021 19:00",
@@ -38,7 +38,7 @@ activity_1.photo.attach(io: photo_1, filename: 'sewing.jpg', content_type: 'imag
 
 photo_2 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v1630058338/activitease/treehouse_nswrdf.jpg')
 activity_2 = Activity.new(
-    title: "Build a treehouse with Maria",
+    title: "Build a treehouse with Michael",
     category: "Architecture",
     address: "Otto-Braun-Straße 65, 10178 Berlin",
     date_from: "11/09/2021 10:00",
