@@ -1,19 +1,23 @@
-<h1>#<%= @chatroom.name %></h1>
+<div class="container">
 
-<div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-  <% @chatroom.messages.each do |message| %>
-    <div class="message-container" id="message-<%= message.id %>">
-      <i class="author">
-        <span><%= message.user.nickname %></span>
-        <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-      </i>
-      <p class="content"><%= message.content %></p>
-    </div>
+  <h1 style="text-align:center">Start chatting!</h1>
+
+  <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+    <% @chatroom.messages.each do |message| %>
+      <div class="message-container" id="message-<%= message.id %>">
+        <div class="author">
+          <span class= "name"><%= message.user.nickname %></span>
+          <small class= "time" ><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+        </div>
+        <p class="content"><%= message.content %></p>
+      </div>
+    <% end %>
+  </div>
+      <div id= "chat-input">
+        <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+          <%= f.input :content, label: false, placeholder: "Start typing#{@chatroom.name}" %>
+          <%= f.submit "Send", class: "btn btn-warning btn-md" %>
+      </div>
   <% end %>
+
 </div>
-    <div id= "chat-input">
-      <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-        <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
-        <button class="btn-info btn-sm"><%= f.button :submit %></button>
-    </div>
-<% end %>
