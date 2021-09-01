@@ -35,6 +35,7 @@
   font-size: 18px;
   font-weight: bold;
   margin: 0;
+  margin-bottom: 8px;
 }
 
 .card-product p {
@@ -60,4 +61,41 @@
 
 .incomingchat-link {
   margin-top: 10px;
+}
+
+.card-product-infos ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+.status {
+  &.accepted:before {
+    background-color: #7FC8A9;
+    border-color: #7FC8A9;
+    box-shadow: 0px 0px 4px 1px #7FC8A9;
+  }
+
+  &.pending:before {
+    background-color: #FF947A;
+    border-color: #FF947A;
+    box-shadow: 0px 0px 4px 1px #FF947A;
+  }
+
+  &.declined:before {
+    background-color: #FF6B6B;
+    border-color: #FF6B6B;
+    box-shadow: 0px 0px 4px 1px #FF6B6B;
+  }
+
+  &:before {
+    content: ' ';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 12px;
+    border: 1px solid #000;
+    border-radius: 12px;
+  }
 }

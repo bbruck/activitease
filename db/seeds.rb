@@ -10,6 +10,7 @@ require "open-uri"
 # p "Destroying database"
 # Activity.destroy_all
 # User.destroy_all
+# Booking.destroy_all
 
 # p "Database destroyed"
 
@@ -18,17 +19,16 @@ user1 = User.new(email: 'b@bruck.com', nickname: "Bernie", password: 'XXXXXX')
 user1.save!
 user2 = User.create!(email: 'm@rosenfeld.com', nickname: "NetterHorst", password: 'XXXXXX')
 user2.save!
-user3 = User.create!(email: 'n@mail.com', nickname: "FetterHorst", password: 'XXXXXX')
+user3 = User.create!(email: 'n@mail.com', nickname: "Fatima", password: 'XXXXXX')
 user3.save!
-user4 = User.create!(email: 's@as.sy', nickname: "BoeserHorst", password: 'XXXXXX')
+user4 = User.create!(email: 's@as.sy', nickname: "Love Love Love", password: 'XXXXXX')
 user4.save!
 p "Creating activities"
 
 photo_1 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v1630058338/activitease/sewing_n7ftad.jpg')
 activity_1 = Activity.new(
-    title: "Sustainable Sewing with Pete",
+    title: "Sustainable Sewing with Bernie",
     category: "Handicrafts",
-    subcategory: "Clothing",
     address: "Alt-Stralau 70, 10245 Berlin",
     date_from: "06/09/2021 19:00",
     date_to: "06/09/2021 21:00",
@@ -39,9 +39,8 @@ activity_1.photo.attach(io: photo_1, filename: 'sewing.jpg', content_type: 'imag
 
 photo_2 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v1630058338/activitease/treehouse_nswrdf.jpg')
 activity_2 = Activity.new(
-    title: "Build a treehouse with Maria",
+    title: "Build a treehouse with Michael",
     category: "Architecture",
-    subcategory: "Outdoor",
     address: "Otto-Braun-Straße 65, 10178 Berlin",
     date_from: "11/09/2021 10:00",
     date_to: "17/09/2021 17:00",
@@ -54,7 +53,6 @@ photo_3 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v163006007
 activity_3 = Activity.new(
     title: "Bungeejumping with Fatima",
     category: "Adventure",
-    subcategory: "Outdoor",
     address: "Prenzlauer Allee 187, 10405 Berlin",
     date_from: "05/09/2021 09:00",
     date_to: "05/09/2021 17:00",
@@ -67,7 +65,6 @@ photo_4 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v163005833
 activity_4 = Activity.new(
     title: "Dog Circle with Bernard",
     category: "Animal",
-    subcategory: "Outdoor",
     address: "Tucholskystraße 2, 10117 Berlin",
     date_from: "05/09/2021 13:00",
     date_to: "05/09/2021 15:00",
@@ -80,7 +77,6 @@ photo_5 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v163005833
 activity_5 = Activity.new(
     title: "Improvisational Theater with Sascha",
     category: "Arts",
-    subcategory: "Performance Arts",
     address: "Mühlenstraße 25, 10243 Berlin",
     date_from: "06/09/2021 18:00",
     date_to: "06/09/2021 20:00",
@@ -93,7 +89,6 @@ photo_6 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v163005833
 activity_6 = Activity.new(
     title: "Stamp-Collecting with Michael",
     category: "Collectibles",
-    subcategory: "Indoor",
     address: "Kemperpl. 1, 10785 Berlin",
     date_from: "04/09/2021 15:00",
     date_to: "04/09/2021 17:00",
@@ -106,7 +101,6 @@ photo_7 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v163006209
 activity_7 = Activity.new(
     title: "Russian-Language Social with Michael",
     category: "Culture",
-    subcategory: "Language",
     address: "Zeughofstraße 22, 10997 Berlin",
     date_from: "07/09/2021 19:00",
     date_to: "07/09/2021 22:00",
@@ -119,7 +113,6 @@ photo_8 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v163005833
 activity_8 = Activity.new(
     title: "Starry Night : Astronomy with Sascha",
     category: "Education",
-    subcategory: "Sciences",
     address: "Prenzlauer Allee 80, 10405 Berlin",
     date_from: "05/09/2021 19:00",
     date_to: "05/09/2021 21:00",
@@ -132,7 +125,6 @@ photo_9 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v163005833
 activity_9 = Activity.new(
     title: "Biriyani Cooking Class with Nayab",
     category: "Food",
-    subcategory: "Ethnic",
     address: "Stubbenkammerstraße 6, 10437 Berlin",
     date_from: "05/09/2021 10:00",
     date_to: "05/09/2021 16:00",
@@ -145,7 +137,6 @@ photo_10 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v16300583
 activity_10 = Activity.new(
     title: "Play Travel to Jerusalem with Michael",
     category: "Games",
-    subcategory: "Indoor",
     address: "Fröbelstraße 17, 10405 Berlin",
     date_from: "05/09/2021 16:00",
     date_to: "05/09/2021 18:00",
@@ -158,11 +149,10 @@ photo_11 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v16300583
 activity_11 = Activity.new(
     title: "Urban Gardening with Bernard",
     category: "Green",
-    subcategory: "Urban Gardening",
     address: "Grellstraße 11, 10409 Berlin",
     date_from: "03/09/2021 07:00",
     date_to: "03/09/2022 19:00",
-    description: "Wanna do something green? Bernard’s invites urban gardeners or all ages and levels. His project creates the last mile of connection that often is not established between projects and people. Every day except holidays from 7am-7pm. More than an activity, maybe a chance for you to find your dream urban garden at Bernards. Join and dish some dirt with other local gardeners.",
+    description: "Wanna do something green? Bernard’s invites urban gardeners or all ages and levels. Every day except holidays from 7am-7pm. Join and dish some dirt with other local gardeners.",
     user_id: user1.id)
 activity_11.save!
 activity_11.photo.attach(io: photo_11, filename: 'gardening.jpg', content_type: 'image/png')
@@ -171,7 +161,6 @@ photo_12 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v16300583
 activity_12 = Activity.new(
     title: "Handpan Workshop with Michael",
     category: "Music",
-    subcategory: "Instruments",
     address: "An der Malche 1, 13507 Berlin",
     date_from: "07/09/2021 19:00",
     date_to: "07/09/2021 21:00",
@@ -184,7 +173,6 @@ photo_13 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v16300583
 activity_13 = Activity.new(
     title: "Birdwatching with Bernard",
     category: "Observation",
-    subcategory: "Birds",
     address: "12529 Schönefeld",
     date_from: "04/09/2021 13:00",
     date_to: "04/09/2021 17:00",
@@ -197,7 +185,6 @@ photo_14 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v16300583
 activity_14 = Activity.new(
     title: "Friday's Social Bar Mixer",
     category: "Social",
-    subcategory: "Mixer",
     address: "Großbeerenstraße 200, 14482 Potsdam",
     date_from: "03/09/2021 19:00",
     date_to: "04/09/2021 02:00",
@@ -210,7 +197,6 @@ photo_15 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v16300583
 activity_15 = Activity.new(
     title: "Love & Spiritual Growth",
     category: "Spiritual",
-    subcategory: "Universal",
     address: "Panoramastraße 1A, 10178 Berlin",
     date_from: "11/09/2021 13:00",
     date_to: "11/09/2021 15:00",
@@ -223,7 +209,6 @@ photo_16 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v16300583
 activity_16 = Activity.new(
     title: "Urban Breakouts",
     category: "Travel",
-    subcategory: "Short Break",
     address: "Karl-Liebknecht-Str. 9, 10178 Berlin",
     date_from: "08/09/2021 19:00",
     date_to: "08/09/2021 21:00",
@@ -236,7 +221,6 @@ photo_17 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v16300583
 activity_17 = Activity.new(
     title: "Sailing for Beginners",
     category: "Sports",
-    subcategory: "Outdoors",
     address: "Fährstraße, 14469 Potsdam",
     date_from: "09/09/2021 19:00",
     date_to: "09/09/2021 21:00",
@@ -249,7 +233,6 @@ photo_18 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v16300615
 activity_18 = Activity.new(
     title: "Bio-Hackers & Transhumanists Thursdays",
     category: "Well-Being",
-    subcategory: "Bio-Hacking",
     address: "Otto-Braun-Straße 65, 10178 Berlin",
     date_from: "09/09/2021 18:00",
     date_to: "09/09/2021 22:00",
