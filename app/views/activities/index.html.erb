@@ -1,17 +1,27 @@
 <div class="container">
   <h2>This is our activities index page</h2>
 
-  <%# <div class="search d-flex align-items-center justify-content-center"> %>
+  <div class="search d-flex align-items-center justify-content-center">
     <div class="entire-sbar">
       <div class="search-bar">
         <%= simple_form_for :activity, url: activities_path, method: :get, html: { class: 'form-inline' } do |f| %>
-          <%= f.input :category, collection: Activity::CATEGORIES, prompt: 'Category', label: "I'm looking for", required: false %>
-          <%= f.input :address, label: "in", required: false, placeholder: 'Location' %>
-          <%= f.button :submit, 'Go!', class: 'form-group btn-go btn-font' %>
+          <% if params[:activity].present?%>
+            <%= f.input :category, collection: Activity::CATEGORIES, prompt: 'select category', selected: params[:activity][:category], label: "I'm looking for", required: false %>
+          <%else %>
+            <%= f.input :category, collection: Activity::CATEGORIES, prompt: 'select category', label: "I'm looking for", required: false %>
+          <%end%>
+          <% if params[:cateogory].present?%>
+            <%= f.input :address, input_html: { value: params[:category][:address] }, label: "in", required: false %>
+          <%else %>
+            <%= f.input :address, label: "in", required: false, placeholder: 'Berlin' %>
+          <%end%>
+          <div class="form-group btn-go">
+            <%= f.button :submit, 'Go!', class: 'btn-font' %>
+          </div>
         <% end %>
       </div>
     </div>
-  <%# </div> %>
+  </div>
 
   <div class="activity-flex">
     <div class="activity_cards">
