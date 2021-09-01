@@ -1,25 +1,44 @@
 .message-container {
-background-color: #F4F4F4;
+background-color: #F8E2CF;
+text-align: left;
+padding: 10px 10px;
+text-align: left;
+width: 70%;
+margin: 20px auto 20px auto;
+border-radius: 10px;
+line-height: 2rem;
 }
 
-.btn-info {
+
+.btn {
   border-radius: 10px;
+  padding: 10px 50px 10px 50px;
+  color: white;
 }
 
 #messages {
-text-align: center;
-}
+margin: auto;
+border-radius: 5px;
+border: aqua;
+border-style: double;
+border-color: #F8E2CF;
+background-color: white;
 
-.message-container {
-text-align: left;
-padding: 20px;
 }
 
 #chat-input {
   width: 60%;
-  margin: auto;
+  margin: 20px auto;}
+
+h1 {
+  padding: 10px;
 }
-
+.author {
+  color: grey;
+  display: flex;
+  justify-content: space-between;
+}
 .content {
-
+margin: auto;
+padding: 10px 10px ;
 }
