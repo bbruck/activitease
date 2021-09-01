@@ -38,4 +38,9 @@ class BookingsController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+  end
+
 end
