@@ -1,6 +1,6 @@
 <div class="container">
   <h1>Your Activitease Dashboard</h1>
-  <h2 style="text-align: center; margin-bottom: 25px;">Requests to Join Your Activities</h2>
+  <h2 style="text-align: center; margin-bottom: 25px;">Pending requests</h2>
   <div class="incoming">
         <% @incoming_bookings.each do |booking| %>
           <div class="card-product">
@@ -10,13 +10,12 @@
               <p><strong>Request from:</strong> <%= booking.user.nickname %></p>
                 <%= link_to "Accept", accept_path(booking), method: :patch, class: "btn btn-success requestbtn" %>
                 <%= link_to "Decline", decline_path(booking), method: :patch, class: "btn btn-danger requestbtn" %>
-                <%= link_to "Get in touch", chatroom_path(booking.chatroom), class: "incomingchat-link btn btn-outline-warning" %>
             </div>
           </div>
         <% end %>
   </div>
 
-  <h2 style="text-align: center; margin-bottom: 25px;">Activities for You to Join</h2>
+  <h2 style="text-align: center; margin-bottom: 25px;", >You are joining</h2>
   <div class="outgoing">
     <% @outgoing_bookings.each do |booking| %>
       <div class="card-product">
@@ -40,6 +39,20 @@
         </div>
       </div>
       <% end %>
+  </div>
+
+  <h2 style="text-align: center; margin-bottom: 25px;">You are hosting</h2>
+  <div class="incoming">
+        <% @upcoming_bookings.each do |booking| %>
+          <div class="card-product">
+            <%= cl_image_tag booking.activity.photo.key, height: 300, width: 400, crop: :fill, class: "activity-img" %>
+            <div class="card-product-infos">
+              <h2><%=link_to booking.activity.title, activity_path(booking.activity) %></h2>
+              <p><strong>Request from:</strong> <%= booking.user.nickname %></p>
+                <%= link_to "Get in touch", chatroom_path(booking.chatroom), class: "incomingchat-link btn btn-outline-warning" %>
+            </div>
+          </div>
+        <% end %>
   </div>
 
 

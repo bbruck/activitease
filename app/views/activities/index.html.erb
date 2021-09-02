@@ -1,52 +1,61 @@
+<<<<<<< HEAD
 <div class="container">
   <h2>Browse through Activitease</h2>
+=======
+>>>>>>> b2a82dd9bb2977c88398824deb9a62cfa171a76d
 
-  <div class="search d-flex align-items-center justify-content-center">
-    <div class="entire-sbar">
-      <div class="search-bar">
-        <%= simple_form_for :activity, url: activities_path, method: :get, html: { class: 'form-inline' } do |f| %>
-          <% if params[:activity].present?%>
-            <%= f.input :category, collection: Activity::CATEGORIES, prompt: 'select category', selected: params[:activity][:category], label: "I'm looking for", required: false %>
-          <%else %>
-            <%= f.input :category, collection: Activity::CATEGORIES, prompt: 'select category', label: "I'm looking for", required: false %>
-          <%end%>
-          <% if params[:cateogory].present?%>
-            <%= f.input :address, input_html: { value: params[:category][:address] }, label: "in", required: false %>
-          <%else %>
-            <%= f.input :address, label: "in", required: false, placeholder: 'Berlin' %>
-          <%end%>
-          <div class="form-group btn-go">
-            <%= f.button :submit, 'Go!', class: 'btn-font' %>
+  <%# <h2>This is our activities index page</h2> %>
+
+  <div class="search d-flex">
+  <div class="left">
+      <div class="entire-sbar">
+        <div class="search-bar">
+          <%= simple_form_for :activity, url: activities_path, method: :get, html: { class: 'form-inline' } do |f| %>
+            <% if params[:activity].present?%>
+              <%= f.input :category, collection: Activity::CATEGORIES, prompt: 'select category', selected: params[:activity][:category], label: "I'm looking for", required: false %>
+            <%else %>
+              <%= f.input :category, collection: Activity::CATEGORIES, prompt: 'select category', label: "I'm looking for", required: false %>
+            <%end%>
+            <% if params[:cateogory].present?%>
+              <%= f.input :address, input_html: { value: params[:category][:address] }, label: "in", required: false %>
+            <%else %>
+              <%= f.input :address, label: "in", required: false, placeholder: 'Berlin' %>
+            <%end%>
+            <div class="form-group btn-go">
+              <%= f.button :submit, 'Go!', class: 'btn-font' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+    <div class="activity-flex">
+      <div class="activity_cards">
+        <% @activities.each do |activity| %>
+          <div class="card-activity">
+            <% if activity.photo.attached? %>
+              <%= cl_image_tag activity.photo.key, height: 400, width: 400, crop: :fill, class: "activity-img" %>
+            <% else %>
+              <%= image_tag "https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80", class: "activity-img" %>
+            <% end %>
+            <div class="card-activity-infos">
+              <p><strong><%= activity.category %></strong></p>
+              <h3><%= link_to activity.title, activity_path(activity) %></h3>
+              <p><strong>From: </strong><%= activity.date_from.strftime("%A, %b %d") %> <strong>To: </strong><%= activity.date_to.strftime("%A, %b %d") %></p>
+            </div>
           </div>
         <% end %>
       </div>
     </div>
-  </div>
-
-  <div class="activity-flex">
-    <div class="activity_cards">
-      <% @activities.each do |activity| %>
-        <div class="card-activity">
-          <% if activity.photo.attached? %>
-            <%= cl_image_tag activity.photo.key, height: 400, width: 400, crop: :fill, class: "activity-img" %>
-          <% else %>
-            <%= image_tag "https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80", class: "activity-img" %>
-          <% end %>
-          <div class="card-activity-infos">
-            <p><strong><%= activity.category %></strong></p>
-            <h3><%= link_to activity.title, activity_path(activity) %></h3>
-            <p><strong>From: </strong><%= activity.date_from.strftime("%A, %b %d") %> <strong>To: </strong><%= activity.date_to.strftime("%A, %b %d") %></p>
-          </div>
-        </div>
-      <% end %>
     </div>
-
+    <div class="container">
+  <div class="right">
     <div id="map"
-      style= "width: 100%; height: 600px;"
+      style= "width: 100%; height: 90vh;"
       data-markers= "<%= @markers.to_json %>"
       data-mapbox-api-key= "<%= ENV['MAPBOX_API_KEY']%>">
     </div>
   </div>
+  </div>
+  </div>
 
   <%= link_to "Get your activity listed!", new_activity_path, class: "btn btn-outline-warning" %>
-</div>

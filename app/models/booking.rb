@@ -1,5 +1,5 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :activity
-  has_one :chatroom
+  has_one :chatroom, dependent: :destroy
 end
