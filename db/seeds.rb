@@ -25,6 +25,18 @@ user4 = User.create!(email: 's@as.sy', nickname: "Love Love Love", password: 'XX
 user4.save!
 p "Creating activities"
 
+photo_19 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v1630583901/eyasu-etsub-JlufluFHiZc-unsplash_qhezue.jpg')
+activity_19 = Activity.new(
+    title: "Bead Embroidery with Bernard",
+    category: "Handicrafts",
+    address: "Oranienstraße 16, 10999 Berlin",
+    date_from: "11/09/2021 13:00",
+    date_to: "11/09/2021 15:00",
+    description: "Here comes the fun. My name is Bernard, I’m going to teach you a lot of the basic bead embroidery techniques. So, armed with these, you can begin to create your first design. You may be working from a pattern. Or you may be creating something all by yourself. So, if you’re not sure where to start, then I have also included some links to beginner level patterns that you can try. Bead embroidery techniques exist to help you create different textures and ‘paint’ different scenes with your beads. I find bead embroidery a lot more free than bead-weaving, in the sense that you can choose exactly what kind of technique(s) you want to use. There are no right and wrong choices. But there are choices that will make life easier or allow you to achieve your goal with more success. So, before I talk about the individual bead embroidery techniques, I want to offer you a helpful framework for deciding which to use. Every Saturday 1-3pm.",
+    user_id: user1.id)
+activity_19.save!
+activity_19.photo.attach(io: photo_19, filename: 'beads.jpg', content_type: 'image/png')
+
 photo_1 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v1630058338/activitease/sewing_n7ftad.jpg')
 activity_1 = Activity.new(
     title: "Sustainable Sewing with Bernie",
@@ -37,10 +49,11 @@ activity_1 = Activity.new(
 activity_1.save!
 activity_1.photo.attach(io: photo_1, filename: 'sewing.jpg', content_type: 'image/png')
 
+
 photo_2 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v1630058338/activitease/treehouse_nswrdf.jpg')
 activity_2 = Activity.new(
     title: "Build a treehouse with Michael",
-    category: "Architecture",
+    category: "Adventure",
     address: "Otto-Braun-Straße 65, 10178 Berlin",
     date_from: "11/09/2021 10:00",
     date_to: "17/09/2021 17:00",
@@ -63,8 +76,8 @@ activity_3.photo.attach(io: photo_3, filename: 'bungee.jpg', content_type: 'imag
 
 photo_4 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v1630058338/activitease/dog_circle_zeq9d2.jpg')
 activity_4 = Activity.new(
-    title: "Dog Circle with Bernard",
-    category: "Animal",
+    title: "Dog Circle & Games with Bernard",
+    category: "Games",
     address: "Tucholskystraße 2, 10117 Berlin",
     date_from: "05/09/2021 13:00",
     date_to: "05/09/2021 15:00",
@@ -76,7 +89,7 @@ activity_4.photo.attach(io: photo_4, filename: 'dog.jpg', content_type: 'image/p
 photo_5 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v1630058337/activitease/improvisational_theater_ga10hy.jpg')
 activity_5 = Activity.new(
     title: "Improvisational Theater with Sascha",
-    category: "Arts",
+    category: "Education",
     address: "Mühlenstraße 25, 10243 Berlin",
     date_from: "06/09/2021 18:00",
     date_to: "06/09/2021 20:00",
@@ -89,7 +102,7 @@ photo_6 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v163005833
 activity_6 = Activity.new(
     title: "Stamp-Collecting with Michael",
     category: "Collectibles",
-    address: "Kemperpl. 1, 10785 Berlin",
+    address: "Potsdamer Str. 4, 10785 Berlin",
     date_from: "04/09/2021 15:00",
     date_to: "04/09/2021 17:00",
     description: "For all stamp collectors - from the curious beginner to the experienced philatelist. Every Saturday 3-5pm, we hold a meeting that is open to everyone and all newcomers are welcome! We have beginner stamp collectors to lifelong experts joining us. We start each meeting with a voluntary show and tell in which we share different stamps, covers or items of philatelic interest from our collections. This is followed by general discussion of stamp related topics and announcements of other online stamp events members may be interested in. Attendees also arrange trades/sales by announcing what they are interested in and if anyone has those items they then arrange to mail them to that member off-line. If you are a stamp collector I hope you can join us!",
@@ -147,8 +160,8 @@ activity_10.photo.attach(io: photo_10, filename: 'chairs.jpg', content_type: 'im
 
 photo_11 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v1630058338/activitease/urban_gardening_aqsjq7.jpg')
 activity_11 = Activity.new(
-    title: "Urban Gardening with Bernard",
-    category: "Green",
+    title: "Urban Gardening Adventure with Bernard",
+    category: "Adventure",
     address: "Grellstraße 11, 10409 Berlin",
     date_from: "03/09/2021 07:00",
     date_to: "03/09/2022 19:00",
@@ -171,8 +184,8 @@ activity_12.photo.attach(io: photo_12, filename: 'handpan.jpg', content_type: 'i
 
 photo_13 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v1630058337/activitease/birdwatching_hyunjf.jpg')
 activity_13 = Activity.new(
-    title: "Birdwatching with Bernard",
-    category: "Observation",
+    title: "Birdwatching with Bernard (Educational Workshop)",
+    category: "Education",
     address: "12529 Schönefeld",
     date_from: "04/09/2021 13:00",
     date_to: "04/09/2021 17:00",
@@ -183,8 +196,8 @@ activity_13.photo.attach(io: photo_13, filename: 'bird.jpg', content_type: 'imag
 
 photo_14 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v1630058337/activitease/social_mixer_vnajpi.jpg')
 activity_14 = Activity.new(
-    title: "Friday's Social Bar Mixer",
-    category: "Social",
+    title: "Learn Mixology @ Friday's Social Bar Mixer",
+    category: "Education",
     address: "Großbeerenstraße 200, 14482 Potsdam",
     date_from: "03/09/2021 19:00",
     date_to: "04/09/2021 02:00",
@@ -196,7 +209,7 @@ activity_14.photo.attach(io: photo_14, filename: 'social.jpg', content_type: 'im
 photo_15 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v1630058337/activitease/spiritual_development_vtt1br.jpg')
 activity_15 = Activity.new(
     title: "Love & Spiritual Growth",
-    category: "Spiritual",
+    category: "Culture",
     address: "Panoramastraße 1A, 10178 Berlin",
     date_from: "11/09/2021 13:00",
     date_to: "11/09/2021 15:00",
@@ -208,7 +221,7 @@ activity_15.photo.attach(io: photo_15, filename: 'growth.jpg', content_type: 'im
 photo_16 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v1630058337/activitease/adrian-trinkaus-7UCmXtyg1CQ-unsplash_wmafjn.jpg')
 activity_16 = Activity.new(
     title: "Urban Breakouts",
-    category: "Travel",
+    category: "Adventure",
     address: "Karl-Liebknecht-Str. 9, 10178 Berlin",
     date_from: "08/09/2021 19:00",
     date_to: "08/09/2021 21:00",
@@ -220,7 +233,7 @@ activity_16.photo.attach(io: photo_16, filename: 'travel.jpg', content_type: 'im
 photo_17 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v1630058335/activitease/sailing_wlkxur.jpg')
 activity_17 = Activity.new(
     title: "Sailing for Beginners",
-    category: "Sports",
+    category: "Adventure",
     address: "Fährstraße, 14469 Potsdam",
     date_from: "09/09/2021 19:00",
     date_to: "09/09/2021 21:00",
@@ -232,7 +245,7 @@ activity_17.photo.attach(io: photo_17, filename: 'sailing.jpg', content_type: 'i
 photo_18 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v1630061503/activitease/Graphik_Biohacking_1978x925_800x800_cqmbke.jpg')
 activity_18 = Activity.new(
     title: "Bio-Hackers & Transhumanists Thursdays",
-    category: "Well-Being",
+    category: "Education",
     address: "Otto-Braun-Straße 65, 10178 Berlin",
     date_from: "09/09/2021 18:00",
     date_to: "09/09/2021 22:00",
