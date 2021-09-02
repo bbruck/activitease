@@ -25,6 +25,18 @@ user4 = User.create!(email: 's@as.sy', nickname: "Love Love Love", password: 'XX
 user4.save!
 p "Creating activities"
 
+photo_19 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v1630583901/eyasu-etsub-JlufluFHiZc-unsplash_qhezue.jpg')
+activity_19 = Activity.new(
+    title: "Bead Embroidery with Bernard",
+    category: "Handicrafts",
+    address: "Oranienstraße 16, 10999 Berlin",
+    date_from: "11/09/2021 13:00",
+    date_to: "11/09/2021 25:00",
+    description: "Here comes the fun. My name is Bernard, I’m going to teach you a lot of the basic bead embroidery techniques. So, armed with these, you can begin to create your first design. You may be working from a pattern. Or you may be creating something all by yourself. So, if you’re not sure where to start, then I have also included some links to beginner level patterns that you can try. Bead embroidery techniques exist to help you create different textures and ‘paint’ different scenes with your beads. I find bead embroidery a lot more free than bead-weaving, in the sense that you can choose exactly what kind of technique(s) you want to use. There are no right and wrong choices. But there are choices that will make life easier or allow you to achieve your goal with more success. So, before I talk about the individual bead embroidery techniques, I want to offer you a helpful framework for deciding which to use. Every Saturday 1-3pm.",
+    user_id: user1.id)
+activity_19.save!
+activity_19.photo.attach(io: photo_19, filename: 'beads.jpg', content_type: 'image/png')
+
 photo_1 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v1630058338/activitease/sewing_n7ftad.jpg')
 activity_1 = Activity.new(
     title: "Sustainable Sewing with Bernie",
@@ -36,6 +48,7 @@ activity_1 = Activity.new(
     user_id: user1.id)
 activity_1.save!
 activity_1.photo.attach(io: photo_1, filename: 'sewing.jpg', content_type: 'image/png')
+
 
 photo_2 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v1630058338/activitease/treehouse_nswrdf.jpg')
 activity_2 = Activity.new(
