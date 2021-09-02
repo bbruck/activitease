@@ -7,7 +7,7 @@
   <% end %>
 
   <% unless @incoming_bookings.empty? %>
-  <h2 class="heading-style" style="text-align: center; margin-bottom: 25px;">Pending host requests</h2>
+  <h2 class="heading-style">Pending host requests</h2>
   <div class="incoming">
         <% @incoming_bookings.each do |booking| %>
           <div class="card-product">
@@ -24,7 +24,7 @@
   <% end %>
 
   <% unless @outgoing_bookings.empty? %>
-  <h2 class="heading-style" style="text-align: center; margin-bottom: 25px;", >You are joining</h2>
+  <h2 class="heading-style">You are joining</h2>
   <div class="outgoing">
     <% @outgoing_bookings.each do |booking| %>
       <div class="card-product">
@@ -52,7 +52,7 @@
   <% end %>
 
   <% unless @outgoing_bookings_pending.empty? %>
-  <h2 style="text-align: center; margin-bottom: 25px;", >Pending join requests</h2>
+  <h2 class="heading-style">Pending join requests</h2>
   <div class="outgoing">
     <% @outgoing_bookings_pending.each do |booking| %>
       <div class="card-product">
@@ -80,7 +80,7 @@
   <% end %>
 
   <% unless @upcoming_bookings.empty? %>
-  <h2 class="heading-style" style="text-align: center; margin-bottom: 25px;">You are hosting</h2>
+  <h2 class="heading-style">You are hosting</h2>
   <div class="incoming">
         <% @upcoming_bookings.each do |booking| %>
           <div class="card-product">
