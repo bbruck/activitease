@@ -1,8 +1,8 @@
 <div class="container">
 
-  <h1 class="h1-chat" style="text-align:center">Start chatting!</h1>
+  <h2 class="h1-chat" style="text-align:center">Start chatting!</h2>
 
-  <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+  <div class id="messages" data-chatroom-id="<%= @chatroom.id %>">
     <% @chatroom.messages.each do |message| %>
       <div class="message-container" id="message-<%= message.id %>">
         <div class="author">
