@@ -44,4 +44,7 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initAutocomplete();
   initFlatpickr();
+  if (document.querySelector("#message_content")){
+    document.querySelector("#message_content").focus()
+  }
 });
