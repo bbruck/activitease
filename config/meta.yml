@@ -1,0 +1,6 @@
+
+meta_product_name: "Activitease"
+meta_title: "Activitease - Find like-minded people for your activities!"
+meta_description: "With Activitease.org you can list your upcoming activities in order to find like-minded which are willing to join these."
+meta_image: "og-image.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
