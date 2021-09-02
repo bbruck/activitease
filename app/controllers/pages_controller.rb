@@ -9,6 +9,7 @@ class PagesController < ApplicationController
   def dashboard
     @incoming_bookings = Booking.joins(:activity).where(status: "pending", activities: {user: current_user})
     @outgoing_bookings = current_user.bookings.where(status: "accepted")
+    @outgoing_bookings_pending = current_user.bookings.where(status: "pending")
     @upcoming_bookings = Booking.joins(:activity).where(status: "accepted", activities: {user: current_user})
   end
 

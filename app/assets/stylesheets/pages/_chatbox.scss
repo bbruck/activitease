@@ -2,7 +2,6 @@
 background-color: #F8E2CF;
 text-align: left;
 padding: 10px 10px;
-text-align: left;
 width: 70%;
 margin: 20px auto 20px auto;
 border-radius: 10px;
@@ -23,12 +22,15 @@ border: aqua;
 border-style: double;
 border-color: #F8E2CF;
 background-color: white;
-
+height: 500px;
+width: auto;
+overflow-y: scroll;
 }
 
 #chat-input {
   width: 60%;
-  margin: 20px auto;}
+  margin: 20px auto;
+}
 
 .h1-chat {
   padding: 10px;

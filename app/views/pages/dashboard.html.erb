@@ -1,8 +1,13 @@
 <div class="container">
-  <%# <h1>Your Activitease Dashboard</h1> %>
-  <div class="heading-style">
-  <h2 style="margin-bottom: 25px;">Activity requests</h2>
-  </div>
+
+  <h1>Your Activitease Dashboard</h1>
+  <% if @incoming_bookings.empty? && @outgoing_bookings.empty? && @outgoing_bookings_pending.empty? && @upcoming_bookings.empty?%>
+    <h2 style="">So far you don't have any activities</h2>
+
+  <% end %>
+
+  <% unless @incoming_bookings.empty? %>
+  <h2 class="heading-style" style="text-align: center; margin-bottom: 25px;">Pending host requests</h2>
   <div class="incoming">
         <% @incoming_bookings.each do |booking| %>
           <div class="card-product">
@@ -16,9 +21,10 @@
           </div>
         <% end %>
   </div>
-    <div class="heading-style">
-    <h2 style="margin-bottom: 25px;", >Joined activities</h2>
-    </div>
+  <% end %>
+
+  <% unless @outgoing_bookings.empty? %>
+  <h2 class="heading-style" style="text-align: center; margin-bottom: 25px;", >You are joining</h2>
   <div class="outgoing">
     <% @outgoing_bookings.each do |booking| %>
       <div class="card-product">
@@ -41,11 +47,40 @@
         <% end %>
         </div>
       </div>
-      <% end %>
+    <% end %>
   </div>
-      <div class="heading-style">
-      <h2 style="margin-bottom: 25px;">Hosting activities</h2>
+  <% end %>
+
+  <% unless @outgoing_bookings_pending.empty? %>
+  <h2 style="text-align: center; margin-bottom: 25px;", >Pending join requests</h2>
+  <div class="outgoing">
+    <% @outgoing_bookings_pending.each do |booking| %>
+      <div class="card-product">
+        <%= cl_image_tag booking.activity.photo.key, height: 300, width: 400, crop: :fill, class: "activity-img" %>
+        <div class="card-product-infos">
+          <h2><%=link_to booking.activity.title, activity_path(booking.activity) %></h2>
+          <ul>
+          <% if booking.status == "pending" %>
+          <li class="status pending"><strong>Status: </strong><%= booking.status %></li>
+          <% elsif booking.status == "accepted" %>
+          <li class="status accepted"><strong>Status: </strong><%= booking.status %></li>
+          <% else %>
+          <li class="status declined"><strong>Status: </strong><%= booking.status %></li>
+          <% end %>
+          </ul>
+        </div>
+        <div class= "chat-link">
+        <% if booking.status == "accepted" %>
+          <%= link_to "Get in touch", chatroom_path(booking.chatroom), class: "btn btn-outline-warning"%>
+        <% end %>
+        </div>
       </div>
+    <% end %>
+  </div>
+  <% end %>
+
+  <% unless @upcoming_bookings.empty? %>
+  <h2 class="heading-style" style="text-align: center; margin-bottom: 25px;">You are hosting</h2>
   <div class="incoming">
         <% @upcoming_bookings.each do |booking| %>
           <div class="card-product">
@@ -58,6 +93,7 @@
           </div>
         <% end %>
   </div>
+  <% end %>
 
 
 </div>
