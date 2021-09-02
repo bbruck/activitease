@@ -31,7 +31,7 @@ activity_19 = Activity.new(
     category: "Handicrafts",
     address: "Oranienstraße 16, 10999 Berlin",
     date_from: "11/09/2021 13:00",
-    date_to: "11/09/2021 25:00",
+    date_to: "11/09/2021 15:00",
     description: "Here comes the fun. My name is Bernard, I’m going to teach you a lot of the basic bead embroidery techniques. So, armed with these, you can begin to create your first design. You may be working from a pattern. Or you may be creating something all by yourself. So, if you’re not sure where to start, then I have also included some links to beginner level patterns that you can try. Bead embroidery techniques exist to help you create different textures and ‘paint’ different scenes with your beads. I find bead embroidery a lot more free than bead-weaving, in the sense that you can choose exactly what kind of technique(s) you want to use. There are no right and wrong choices. But there are choices that will make life easier or allow you to achieve your goal with more success. So, before I talk about the individual bead embroidery techniques, I want to offer you a helpful framework for deciding which to use. Every Saturday 1-3pm.",
     user_id: user1.id)
 activity_19.save!
