@@ -39,12 +39,8 @@
           <% else %>
           <li class="status declined"><strong>Status: </strong><%= booking.status %></li>
           <% end %>
+          <%= link_to "Get in touch", chatroom_path(booking.chatroom), class: "incomingchat-link btn btn-outline-warning" %>
           </ul>
-        </div>
-        <div class= "chat-link">
-        <% if booking.status == "accepted" %>
-          <%= link_to "Get in touch", chatroom_path(booking.chatroom), class: "btn btn-outline-warning"%>
-        <% end %>
         </div>
       </div>
     <% end %>
