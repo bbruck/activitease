@@ -1,6 +1,8 @@
 <div class="container">
-  <h1>Your Activitease Dashboard</h1>
-  <h2 style="text-align: center; margin-bottom: 25px;">Pending requests</h2>
+  <%# <h1>Your Activitease Dashboard</h1> %>
+  <div class="heading-style">
+  <h2 style="margin-bottom: 25px;">Activity requests</h2>
+  </div>
   <div class="incoming">
         <% @incoming_bookings.each do |booking| %>
           <div class="card-product">
@@ -14,8 +16,9 @@
           </div>
         <% end %>
   </div>
-
-  <h2 style="text-align: center; margin-bottom: 25px;", >You are joining</h2>
+    <div class="heading-style">
+    <h2 style="margin-bottom: 25px;", >Joined activities</h2>
+    </div>
   <div class="outgoing">
     <% @outgoing_bookings.each do |booking| %>
       <div class="card-product">
@@ -40,8 +43,9 @@
       </div>
       <% end %>
   </div>
-
-  <h2 style="text-align: center; margin-bottom: 25px;">You are hosting</h2>
+      <div class="heading-style">
+      <h2 style="margin-bottom: 25px;">Hosting activities</h2>
+      </div>
   <div class="incoming">
         <% @upcoming_bookings.each do |booking| %>
           <div class="card-product">

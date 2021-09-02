@@ -1,3 +1,10 @@
+.heading-style {
+  margin-top: 50px;
+  color: grey;
+}
+
+
+
 .incoming {
   margin: 0 auto;
   width: 50vw;
@@ -20,11 +27,14 @@
   display: flex;
   align-items: center;
   margin-bottom: 15px;
+  width: 431px;
+  height:175px;
+  border-radius: 20px;
 }
 
 .card-product img {
   height: 100%;
-  width: 120px;
+  width: 150px;
   object-fit: cover;
   border-radius: 5px;
 }
