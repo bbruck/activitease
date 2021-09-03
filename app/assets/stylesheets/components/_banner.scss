@@ -1,7 +1,7 @@
 .banner {
   // height: 70vh;
   width: 100vw;
-  background-image: asset-url('banner-img.jpg');
+  background-image: asset-url('list-of-hobbies.jpeg');
   background-size: cover;
   background-position: top;
   padding: 150px 0;
@@ -14,11 +14,13 @@
   margin-top: 10px;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 600;
+  margin-bottom: 50px;
 }
 
 .banner .btn:hover {
   color: white;
 }
+
 
 .banner > h1 {
   font-family: 'Josefin Sans', sans-serif;
@@ -28,7 +30,10 @@
   font-size: 42px;
   font-weight: bold;
   padding-left: 50px;
-  padding-top: 100px;
+  padding-top: 30px;
+
+
+
 }
 
 .bar-container {
