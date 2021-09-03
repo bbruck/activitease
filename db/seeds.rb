@@ -54,10 +54,10 @@ photo_2 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v163005833
 activity_2 = Activity.new(
     title: "Build a treehouse with Michael",
     category: "Adventure",
-    address: "Otto-Braun-Straße 65, 10178 Berlin",
+    address: "Reineke-Fuchs-Weg 55, 13088 Berlin",
     date_from: "11/09/2021 10:00",
     date_to: "17/09/2021 17:00",
-    description: "A creative insight into how to build your own treehouse from a simple platform type to a fairy castle. Maria educates and empowers its participants to build treehouse experiences and delivers the imperative message that it is possible to start living in harmony with nature now ... off the grid ... with low impact on the environment and an ethos of responsible consumerism. Join Maria in this collaborative exploration and endeavor into low impact living. Block workshop. September 11-17, 2021. Each scheduled day from 10am-5pm.",
+    description: "A creative insight into how to build your own treehouse from a simple platform type to a fairy castle. Michael educates and empowers its participants to build treehouse experiences and delivers the imperative message that it is possible to start living in harmony with nature now ... off the grid ... with low impact on the environment and an ethos of responsible consumerism. Join Michael in this collaborative exploration and endeavor into low impact living. Block workshop. September 11-17, 2021. Each scheduled day from 10am-5pm.",
     user_id: user2.id)
 activity_2.save!
 activity_2.photo.attach(io: photo_2, filename: 'treehouse.jpg', content_type: 'image/png')
