@@ -32,6 +32,9 @@
               <%= image_tag "https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80", class: "activity-img" %>
             <% end %>
             <div class="card-activity-infos">
+              <% if activity.user == current_user %>
+                <span class="badge badge-success">This is your activity</span>
+              <% end %>
               <p><strong><%= activity.category %></strong></p>
               <h3><%= link_to activity.title, activity_path(activity) %></h3>
               <p><strong>From: </strong><%= activity.date_from.strftime("%A, %b %d") %> <strong>To: </strong><%= activity.date_to.strftime("%A, %b %d") %></p>
