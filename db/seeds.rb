@@ -100,25 +100,25 @@ activity_5.photo.attach(io: photo_5, filename: 'impro.jpg', content_type: 'image
 
 photo_6 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v1630058337/activitease/stamps_cmgdwa.jpg')
 activity_6 = Activity.new(
-    title: "Stamp-Collecting with Michael",
+    title: "Stamp-Collecting with Nayab",
     category: "Collectibles",
     address: "Potsdamer Str. 4, 10785 Berlin",
     date_from: "04/09/2021 15:00",
     date_to: "04/09/2021 17:00",
     description: "For all stamp collectors - from the curious beginner to the experienced philatelist. Every Saturday 3-5pm, we hold a meeting that is open to everyone and all newcomers are welcome! We have beginner stamp collectors to lifelong experts joining us. We start each meeting with a voluntary show and tell in which we share different stamps, covers or items of philatelic interest from our collections. This is followed by general discussion of stamp related topics and announcements of other online stamp events members may be interested in. Attendees also arrange trades/sales by announcing what they are interested in and if anyone has those items they then arrange to mail them to that member off-line. If you are a stamp collector I hope you can join us!",
-    user_id: user2.id)
+    user_id: user3.id)
 activity_6.save!
 activity_6.photo.attach(io: photo_6, filename: 'stamps.jpg', content_type: 'image/png')
 
 photo_7 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v1630062090/activitease/russian_oa2myl.jpg')
 activity_7 = Activity.new(
-    title: "Russian-Language Social with Michael",
+    title: "Russian-Language Social with Sascha",
     category: "Culture",
     address: "Zeughofstraße 22, 10997 Berlin",
     date_from: "07/09/2021 19:00",
     date_to: "07/09/2021 22:00",
     description: "Beyond vodka and pickles, Babushkas and Matryoshkas: Meet local Russian language and culture lovers! Have fun practicing, learning new phrases and sentences and finally understanding those verb conjugations! All ages and levels welcome. Every Tuesday evening 7-10pm.",
-    user_id: user2.id)
+    user_id: user4.id)
 activity_7.save!
 activity_7.photo.attach(io: photo_7, filename: 'russian.jpg', content_type: 'image/png')
 
@@ -148,13 +148,13 @@ activity_9.photo.attach(io: photo_9, filename: 'biriyani.jpg', content_type: 'im
 
 photo_10 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v1630058335/activitease/chairs_uxiohp.jpg')
 activity_10 = Activity.new(
-    title: "Play Travel to Jerusalem with Michael",
+    title: "Play Travel to Jerusalem with Fatima",
     category: "Games",
     address: "Fröbelstraße 17, 10405 Berlin",
     date_from: "05/09/2021 16:00",
     date_to: "05/09/2021 18:00",
     description: "Play musical chairs to swap jobs, prospects, or decisions in a rapid, confusing fashion. The original term comes from a children's game, also called “travel to Jerusalem,” in which the players march to music around a row of chairs where every other chair faces in the opposite direction. Join Michael in playfulness. Please note: this is an activity for adults only who would like to bring out their inner child. Every Sunday 4-6pm.",
-    user_id: user2.id)
+    user_id: user3.id)
 activity_10.save!
 activity_10.photo.attach(io: photo_10, filename: 'chairs.jpg', content_type: 'image/png')
 
@@ -172,13 +172,13 @@ activity_11.photo.attach(io: photo_11, filename: 'gardening.jpg', content_type: 
 
 photo_12 = URI.open('https://res.cloudinary.com/dgn2rtpsl/image/upload/v1630058337/activitease/handpan_wecguy.jpg')
 activity_12 = Activity.new(
-    title: "Handpan Workshop with Michael",
+    title: "Handpan Workshop with Sascha",
     category: "Music",
     address: "An der Malche 1, 13507 Berlin",
     date_from: "07/09/2021 19:00",
     date_to: "07/09/2021 21:00",
-    description: "You want to get to know your handpan in a workshop and / or finetune your abilities? Michael kick-starts your journey into the world of handpan playing. You’ll learn the essential basics and even get to play your first musical piece right away. With Michael, you will have created a perfect foundation to develop your playing further and continue your handpan journey. Bring your handpan is recommended. Or try out. Open for all. Every Tuesday 7-9pm.",
-    user_id: user2.id)
+    description: "You want to get to know your handpan in a workshop and / or finetune your abilities? Michael kick-starts your journey into the world of handpan playing. You’ll learn the essential basics and even get to play your first musical piece right away. With Sascha, you will have created a perfect foundation to develop your playing further and continue your handpan journey. Bring your handpan is recommended. Or try out. Open for all. Every Tuesday 7-9pm.",
+    user_id: user4.id)
 activity_12.save!
 activity_12.photo.attach(io: photo_12, filename: 'handpan.jpg', content_type: 'image/png')
 
@@ -238,7 +238,7 @@ activity_17 = Activity.new(
     date_from: "09/09/2021 19:00",
     date_to: "09/09/2021 21:00",
     description: "Freedom in a nutshell. Our weekly gathering brings sailing enthusiasts together. Let’s share experiences, from first steps in sailing to find a crew for the next sail, this gathering is designed to familiarize you with the world of sailing, one that some see as a sport and others choose as a lifestyle. Thursdays 7-9pm.",
-    user_id: user2.id)
+    user_id: user4.id)
 activity_17.save!
 activity_17.photo.attach(io: photo_17, filename: 'sailing.jpg', content_type: 'image/png')
 
