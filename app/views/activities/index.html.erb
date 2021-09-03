@@ -6,9 +6,9 @@
         <div class="search-bar">
           <%= simple_form_for :activity, url: activities_path, method: :get, html: { class: 'form-inline' } do |f| %>
             <% if params[:activity].present?%>
-              <%= f.input :category, collection: Activity::CATEGORIES, prompt: 'select category', selected: params[:activity][:category], label: "I'm looking for", required: false %>
+              <%= f.input :category, collection: Activity::CATEGORIES, prompt: 'select category', selected: params[:activity][:category], label: "Looking for", required: false %>
             <%else %>
-              <%= f.input :category, collection: Activity::CATEGORIES, prompt: 'select category', label: "I'm looking for", required: false %>
+              <%= f.input :category, collection: Activity::CATEGORIES, prompt: 'select category', label: "Looking for", required: false %>
             <%end%>
             <% if params[:cateogory].present?%>
               <%= f.input :address, input_html: { value: params[:category][:address] }, label: "in", required: false %>
