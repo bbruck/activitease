@@ -33,7 +33,7 @@
             <% end %>
             <div class="card-activity-infos">
               <% if activity.user == current_user %>
-                <span class="badge badge-success">This is your activity</span>
+                <span class="badge badge-warning">This is your activity</span>
               <% end %>
               <p><strong><%= activity.category %></strong></p>
               <h3><%= link_to activity.title, activity_path(activity) %></h3>
